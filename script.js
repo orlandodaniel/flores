@@ -107,7 +107,7 @@ onload = () => {
         msg.id = 'final-love-message';
         msg.textContent = 'Te amo mucho, Yessy 💗';
         msg.style.position = 'fixed';
-        msg.style.top = '45%';
+        msg.style.top = '40%';
         msg.style.left = '50%';
         msg.style.transform = 'translate(-50%, -50%)';
         msg.style.fontSize = '2.4em';

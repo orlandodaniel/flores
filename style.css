@@ -91,15 +91,6 @@ body {
   opacity: 0.6;
 }
 
-.night {
-  position: fixed;
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-  width: 100%;
-  height: 100%;
-  filter: blur(0.1vmin);
-}
 
 .flowers {
   position: relative;
@@ -826,14 +817,14 @@ body {
   padding: 0.5em 1em;
   box-shadow: 0 2px 8px #ffe06655;
   font-family: 'Segoe UI', sans-serif;
-  font-size: 1.1em;
-  min-width: 120px;
+  font-size: 2em;
+  min-width: 150px;
   user-select: none;
 }
 
 .hearts-progress-bar {
-  width: 80px;
-  height: 14px;
+  width: 200px;
+  height: 20px;
   background: #ffe4f0;
   border-radius: 8px;
   overflow: hidden;
@@ -860,8 +851,8 @@ body {
 
 .heart-float {
   position: absolute;
-  width: 38px;
-  height: 34px;
+  width: 120px;   /* 38px * 1.2 = 45.6px */
+  height: 90px;  /* 34px * 1.2 = 40.8px */
   pointer-events: auto;
   cursor: pointer;
   animation: heart-float-move 8s linear infinite;
@@ -916,8 +907,8 @@ body {
   background: rgba(255,255,255,0.7);
   backdrop-filter: blur(2px);
   max-width: none;
-  width: 480px;
-  height: 240px;
+  width: 600px;
+  height: 500px;
   min-height: unset;
   min-width: unset;
   margin: auto;
@@ -940,7 +931,7 @@ body {
 
 .center-card h2 {
   margin-bottom: 0.7em;
-  font-size: 2em;
+  font-size: 3.5em;
   color: #e1a100;
   font-family: 'Segoe UI', sans-serif;
   letter-spacing: 1px;
@@ -948,14 +939,14 @@ body {
 
 .center-card p {
   margin-bottom: 1.5em;
-  font-size: 1.1em;
+  font-size: 2.5em;
   color: #7a6a00;
   font-family: 'Segoe UI', sans-serif;
 }
 
 .center-card button {
-  padding: 0.8em 2.2em;
-  font-size: 1.1em;
+  padding: 0.5em 1em;
+  font-size: 3em;
   background: #ffe066;
   color: #7a6a00;
   border: none;
@@ -993,21 +984,21 @@ body:not(.not-loaded) .center-card {
 
 .hearts-instructions {
   position: fixed;
-  top: 48px;
+  top: 120px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 3001;
   background: #fffbe0;
-  color: #e75480;
+  color: #e60f4f;
   font-family: 'Segoe UI', sans-serif;
-  font-size: 1.18em;
-  padding: 1em 2em;
+  font-size: 1.4em;
+  padding: 0.7em 1em;
   border-radius: 14px;
   box-shadow: 0 2px 8px #ffe06655;
   border: 1px solid #ffe066;
   transition: opacity 0.5s;
   pointer-events: none;
-  max-width: 90vw;
+  max-width: 95vw;
   text-align: center;
 }
 
@@ -1075,6 +1066,26 @@ body:not(.not-loaded) .center-card {
   animation-duration: 26s;
   animation-delay: 6s;
 }
+.cloud--5 {
+  top: 28vh;
+  left: 70vw;
+  width: 65px;
+  height: 30px;
+  opacity: 0.55;
+  animation-name: cloud-move-5;
+  animation-duration: 30s;
+  animation-delay: 8s;
+}
+.cloud--6 {
+  top: 4vh;
+  left: 60vw;
+  width: 50px;
+  height: 22px;
+  opacity: 0.45;
+  animation-name: cloud-move-6;
+  animation-duration: 24s;
+  animation-delay: 3s;
+}
 @keyframes cloud-move-1 {
   0% { transform: translateX(0); }
   50% { transform: translateX(60px); }
@@ -1095,97 +1106,24 @@ body:not(.not-loaded) .center-card {
   50% { transform: translateX(55px); }
   100% { transform: translateX(0); }
 }
+@keyframes cloud-move-5 {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-40px); }
+  100% { transform: translateX(0); }
+}
+@keyframes cloud-move-6 {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(35px); }
+  100% { transform: translateX(0); }
+}
 
-/* --- MOBILE RESPONSIVE --- */
 @media (max-width: 700px) {
-  body {
-    padding: 10px 0px;
-    min-height: 100vh;
-  }
-  .background-sky,
-  .background-meadow,
-  .night {
-    width: 100vw !important;
-    left: 0 !important;
-  }
-  .background-sun {
-    left: 6vw;
-    top: 7vmin;
-    width: 22vw;
-    height: 22vw;
-    min-width: 70px;
-    min-height: 70px;
-    max-width: 120px;
-    max-height: 120px;
-  }
-  .cloud,
-  .cloud--1, .cloud--2, .cloud--3, .cloud--4 {
-    min-width: 40px;
-    min-height: 18px;
-    max-width: 90vw;
-    max-height: 60px;
-  }
-  .cloud--1 { top: 7vh; left: 2vw; width: 60px; height: 28px; }
-  .cloud--2 { top: 13vh; left: 60vw; width: 40px; height: 18px; }
-  .cloud--3 { top: 4vh; left: 30vw; width: 35px; height: 14px; }
-  .cloud--4 { top: 18vh; left: 18vw; width: 38px; height: 15px; }
-  .background-meadow {
-    height: 18vh;
-    border-top-left-radius: 60vw 8vh;
-    border-top-right-radius: 60vw 8vh;
-  }
-  .flowers {
-    transform: scale(0.7);
-  }
-  .flowers-wrapper {
-    padding-bottom: 10vh;
-  }
-  .center-card {
-    width: 98vw;
-    min-width: unset;
-    max-width: 99vw;
-    height: auto;
-    min-height: 160px;
-    padding: 1em 0.2em;
-    font-size: 0.98em;
-  }
-  .center-card h2 {
-    font-size: 1.3em;
-  }
-  .center-card p {
-    font-size: 1em;
-  }
-  .hearts-progress-container {
-    top: 10px;
-    right: 10px;
-    font-size: 1em;
-    min-width: 80px;
-    padding: 0.3em 0.6em;
-    gap: 0.4em;
-  }
-  .hearts-progress-bar {
-    width: 48px;
-    height: 10px;
-    margin-right: 0.3em;
-  }
-  .hearts-instructions {
-    top: 70px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.98em;
-    padding: 0.6em 1em;
-    max-width: 98vw;
-  }
-  #final-love-message {
-    top: 18%;
-    font-size: 1.1em !important;
-    padding: 0.5em 1.2em !important;
-    border-radius: 12px !important;
-    max-width: 95vw;
-    word-break: break-word;
-  }
+  /* ...existing code... */
   .heart-float {
-    width: 28px;
-    height: 24px;
+    width: 34px;   /* 28px * 1.2 = 33.6px */
+    height: 29px;  /* 24px * 1.2 = 28.8px */
   }
+  .cloud--5 { top: 23vh; left: 65vw; width: 32px; height: 14px; }
+  .cloud--6 { top: 2vh; left: 52vw; width: 22px; height: 10px; }
+  /* ...existing code... */
 }

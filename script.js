@@ -105,7 +105,7 @@ onload = () => {
       if (!document.getElementById('final-love-message')) {
         const msg = document.createElement('div');
         msg.id = 'final-love-message';
-        msg.textContent = 'Te amo mucho, Yessy ❤️';
+        msg.textContent = 'Te amo mucho, Yessy 💗';
         msg.style.position = 'fixed';
         msg.style.top = '45%';
         msg.style.left = '50%';

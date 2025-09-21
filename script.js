@@ -21,7 +21,7 @@ onload = () => {
   }
 
   // --- Corazones flotantes y barra de progreso ---
-  const TOTAL_HEARTS = 2;
+  const TOTAL_HEARTS = 29;
   let heartsCollected = 0;
   const heartsContainer = document.getElementById('hearts-container');
   const progressFill = document.getElementById('hearts-progress-bar-fill');
@@ -105,16 +105,16 @@ onload = () => {
       if (!document.getElementById('final-love-message')) {
         const msg = document.createElement('div');
         msg.id = 'final-love-message';
-        msg.textContent = 'Te amo, Caramelito';
+        msg.textContent = 'Te amo mucho, Yessy ❤️';
         msg.style.position = 'fixed';
-        msg.style.top = '10%';
+        msg.style.top = '45%';
         msg.style.left = '50%';
         msg.style.transform = 'translate(-50%, -50%)';
-        msg.style.fontSize = '2em';
+        msg.style.fontSize = '2.4em';
         msg.style.fontFamily = "'Segoe UI', sans-serif";
         msg.style.color = '#ff37a5ff';
         msg.style.background = 'rgba(255,255,255,0.92)';
-        msg.style.padding = '0.5em 1.8em';
+        msg.style.padding = '1em 2em';
         msg.style.borderRadius = '18px';
         msg.style.boxShadow = '0 4px 24px #ffe06655';
         msg.style.zIndex = 4000;
